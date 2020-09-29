@@ -3,74 +3,93 @@
  */
 package JunitTesting;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.*;
 import org.junit.Assert;
-
 public class UserRegTest {
-    @Test 
-    public void testSomeLibraryMethod() {
-        UserReg classUnderTest = new UserReg();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
-    }
-    public void FirstNameWhenProperTrue()
+	
+	@Test
+	public void givenMessage_WhenSad_ShouldReturnSad()
+	{
+		UserReg moodAnalyser = new UserReg();
+		String mood = moodAnalyser.analysemood("This is Sad message");
+		Assert.assertEquals("SAD", mood);
+	}
+	//@Test
+	public void givenMessage_WhenNotSad_ShouldReturnHappy()
+	{
+		UserReg moodAnalyser = new UserReg();
+		String mood = moodAnalyser.analysemood("This is Happy message");
+		Assert.assertEquals("HAPPY", mood);
+	}
+	//@Test
+	public void givenFname_WhenProper_ShouldReturnTrue()
     {
-    	UserReg userValidator = new UserReg();
-    	Assert.assertTrue(userValidator.validatefirstname("Ashutosh"));
+		UserReg userValidator = new UserReg();
+		boolean result = userValidator.validatefirstname("Avnish");
+    	Assert.assertTrue(result);
     }
-    public void FirstNameWhenNotProperFalse()
+	//@Test
+    public void givenFname_WhenProper_ShouldReturnFalse()
     {
-    	UserReg userValidator = new UserReg();
-    	Assert.assertTrue(userValidator.validatefirstname("ashutosh"));
+		UserReg userValidator = new UserReg();
+		boolean result = userValidator.validatefirstname("avnish");
+		Assert.assertFalse(result);
     }
-    public void LastNameWhenProperTrue()
+	//@Test
+    public void givenLname_WhenProper_ShouldReturnTrue()
     {
-    	UserReg userValidator = new UserReg();
-    	Assert.assertTrue(userValidator.validatelastname("Aggarwal"));
+		UserReg userValidator = new UserReg();
+		boolean result = userValidator.validatelastname("Gupta");
+    	Assert.assertTrue(result);
     }
-    public void LastNameWhenNotProperFalse()
+	//@Test
+    public void givenLname_WhenProper_ShouldReturnFalse()
     {
-    	UserReg userValidator = new UserReg();
-    	Assert.assertTrue(userValidator.validatelastname("aggarwal"));
+		UserReg userValidator = new UserReg();
+		boolean result = userValidator.validatelastname("gupta");
+    	Assert.assertFalse(result);
     }
-    public void EmailWhenProperTrue()
+	//@Test
+    public void givenEmail_WhenProper_ShouldReturnTrue()
     {
-    	UserReg userValidator = new UserReg();
-    	Assert.assertTrue(userValidator.validateemail("ashutosh@gmail.com"));
+		UserReg userValidator = new UserReg();
+		boolean result = userValidator.validateemail("abc@gmail.com");
+    	Assert.assertTrue(result);
     }
-    public void EmailWhenNotProperFalse()
+	//@Test
+    public void givenEmail_WhenProper_ShouldReturnFalse()
     {
-    	UserReg userValidator = new UserReg();
-    	Assert.assertTrue(userValidator.validateemail("ashutosh@@gmail.com"));
+		UserReg userValidator = new UserReg();
+		boolean result = userValidator.validateemail("xyz@@gmail.com");
+    	Assert.assertFalse(result);
     }
-    public void PhoneNoWhenProperTrue()
+	//@Test
+    public void givenPhNo_WhenProper_ShouldReturnTrue()
     {
-    	UserReg userValidator = new UserReg();
-    	Assert.assertTrue(userValidator.validatephno("91 9888823512"));
+		UserReg userValidator = new UserReg();
+		boolean result = userValidator.validatephno("91 8083803323");
+    	Assert.assertTrue(result);
     }
-    public void PhoneNoWhenNotProperFalse()
+	//@Test
+    public void givenPhNo_WhenProper_ShouldReturnFalse()
     {
-    	UserReg userValidator = new UserReg();
-    	Assert.assertTrue(userValidator.validatephno("9198888235122"));
+		UserReg userValidator = new UserReg();
+		boolean result = userValidator.validatephno("918083803323");
+    	Assert.assertFalse(result);
     }
-    public void PasswordWhenProperTrue()
+	//@Test
+    public void givenPass_WhenProper_ShouldReturnTrue()
     {
-    	UserReg userValidator = new UserReg();
-    	Assert.assertTrue(userValidator.validatepass("Zxcvbnm@2"));
+		UserReg userValidator = new UserReg();
+		boolean result = userValidator.validatepass("Tes@121313");
+    	Assert.assertTrue(result);
     }
-    public void PasswordWhenNotProperFalse()
+	//@Test
+    public void givenPass_WhenProper_ShouldReturnFalse()
     {
-    	UserReg userValidator = new UserReg();
-    	Assert.assertTrue(userValidator.validatepass("zzzzzzzz"));
+		UserReg userValidator = new UserReg();
+		boolean result = userValidator.validatepass("test@lfhwkf");
+    	Assert.assertFalse(result);
     }
-    public void whensad() {
-    	UserReg userValidator = new UserReg();
-       String mood=userValidator.analysemood("This is Sad Message");
-       Assert.assertEquals("SAD",mood);
-    }
-    public void whennotsad() {
-    	UserReg userValidator = new UserReg();
-       String mood=userValidator.analysemood("This is happy Message");
-       Assert.assertEquals("HAPPY",mood);
-    }
+	 
 }
