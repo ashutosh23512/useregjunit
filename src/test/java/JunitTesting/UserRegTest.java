@@ -25,28 +25,28 @@ public class UserRegTest {
 	public void givenFname_WhenProper_ShouldReturnTrue()
     {
 		UserReg userValidator = new UserReg();
-		boolean result = userValidator.validatefirstname("Avnish");
+		boolean result = userValidator.validatefirstname("Ashutosh");
     	Assert.assertTrue(result);
     }
 	//@Test
     public void givenFname_WhenProper_ShouldReturnFalse()
     {
 		UserReg userValidator = new UserReg();
-		boolean result = userValidator.validatefirstname("avnish");
+		boolean result = userValidator.validatefirstname("ashutosh");
 		Assert.assertFalse(result);
     }
 	//@Test
     public void givenLname_WhenProper_ShouldReturnTrue()
     {
 		UserReg userValidator = new UserReg();
-		boolean result = userValidator.validatelastname("Gupta");
+		boolean result = userValidator.validatelastname("Aggarwal");
     	Assert.assertTrue(result);
     }
 	//@Test
     public void givenLname_WhenProper_ShouldReturnFalse()
     {
 		UserReg userValidator = new UserReg();
-		boolean result = userValidator.validatelastname("gupta");
+		boolean result = userValidator.validatelastname("aggarwal");
     	Assert.assertFalse(result);
     }
 	//@Test
@@ -67,14 +67,14 @@ public class UserRegTest {
     public void givenPhNo_WhenProper_ShouldReturnTrue()
     {
 		UserReg userValidator = new UserReg();
-		boolean result = userValidator.validatephno("91 8083803323");
+		boolean result = userValidator.validatephno("91 9888823512");
     	Assert.assertTrue(result);
     }
 	//@Test
     public void givenPhNo_WhenProper_ShouldReturnFalse()
     {
 		UserReg userValidator = new UserReg();
-		boolean result = userValidator.validatephno("918083803323");
+		boolean result = userValidator.validatephno("919888823512");
     	Assert.assertFalse(result);
     }
 	//@Test
