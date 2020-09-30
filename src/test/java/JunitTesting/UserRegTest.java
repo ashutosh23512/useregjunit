@@ -5,90 +5,139 @@ package JunitTesting;
 
 import org.junit.*;
 import org.junit.Assert;
+import org.junit.rules.ExpectedException;
+import org.junit.Assert;
 public class UserRegTest {
 	
+
 	@Test
-	public void givenMessage_WhenSad_ShouldReturnSad()
-	{
-		UserReg moodAnalyser = new UserReg();
-		String mood = moodAnalyser.analysemood("This is Sad message");
-		Assert.assertEquals("SAD", mood);
-	}
-	//@Test
-	public void givenMessage_WhenNotSad_ShouldReturnHappy()
-	{
-		UserReg moodAnalyser = new UserReg();
-		String mood = moodAnalyser.analysemood("This is Happy message");
-		Assert.assertEquals("HAPPY", mood);
-	}
-	//@Test
 	public void givenFname_WhenProper_ShouldReturnTrue()
     {
 		UserReg userValidator = new UserReg();
-		boolean result = userValidator.validatefirstname("Avnish");
+		boolean result=false;
+		try {
+			result = userValidator.validatefirstname("Ashutosh");
+		} catch (UserRegistrationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	Assert.assertTrue(result);
     }
-	//@Test
+	@Test
     public void givenFname_WhenProper_ShouldReturnFalse()
     {
 		UserReg userValidator = new UserReg();
-		boolean result = userValidator.validatefirstname("avnish");
+		boolean result=false;
+		try {
+			result = userValidator.validatefirstname("ashutosh");
+		} catch (UserRegistrationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Assert.assertFalse(result);
     }
-	//@Test
+	@Test
     public void givenLname_WhenProper_ShouldReturnTrue()
     {
 		UserReg userValidator = new UserReg();
-		boolean result = userValidator.validatelastname("Gupta");
+		boolean result=false;
+		try {
+			result = userValidator.validatelastname("Aggarwal");
+		} catch (UserRegistrationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	Assert.assertTrue(result);
     }
-	//@Test
+	@Test
     public void givenLname_WhenProper_ShouldReturnFalse()
     {
 		UserReg userValidator = new UserReg();
-		boolean result = userValidator.validatelastname("gupta");
+		boolean result=false;
+		try {
+			result = userValidator.validatelastname("aggarwal");
+		} catch (UserRegistrationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	Assert.assertFalse(result);
     }
-	//@Test
+	@Test
     public void givenEmail_WhenProper_ShouldReturnTrue()
     {
 		UserReg userValidator = new UserReg();
-		boolean result = userValidator.validateemail("abc@gmail.com");
+		boolean result=false;
+		try {
+			result = userValidator.validateemail("abc@gmail.com");
+		} catch (UserRegistrationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	Assert.assertTrue(result);
     }
-	//@Test
+	@Test
     public void givenEmail_WhenProper_ShouldReturnFalse()
     {
 		UserReg userValidator = new UserReg();
-		boolean result = userValidator.validateemail("xyz@@gmail.com");
+		boolean result=false;
+		try {
+			result = userValidator.validateemail("xyz@@gmail.com");
+		} catch (UserRegistrationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	Assert.assertFalse(result);
     }
-	//@Test
+	@Test
     public void givenPhNo_WhenProper_ShouldReturnTrue()
     {
 		UserReg userValidator = new UserReg();
-		boolean result = userValidator.validatephno("91 8083803323");
+		boolean result=false;
+		try {
+			result = userValidator.validatephno("91 9888823512");
+		} catch (UserRegistrationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	Assert.assertTrue(result);
     }
-	//@Test
+	@Test
     public void givenPhNo_WhenProper_ShouldReturnFalse()
     {
 		UserReg userValidator = new UserReg();
-		boolean result = userValidator.validatephno("918083803323");
+		boolean result=false;
+		try {
+			result = userValidator.validatephno("919888823512");
+		} catch (UserRegistrationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	Assert.assertFalse(result);
     }
-	//@Test
+	@Test
     public void givenPass_WhenProper_ShouldReturnTrue()
     {
 		UserReg userValidator = new UserReg();
-		boolean result = userValidator.validatepass("Tes@121313");
+		boolean result=false;
+		try {
+			result = userValidator.validatepass("Tes@121313");
+		} catch (UserRegistrationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	Assert.assertTrue(result);
     }
-	//@Test
+	@Test
     public void givenPass_WhenProper_ShouldReturnFalse()
     {
 		UserReg userValidator = new UserReg();
-		boolean result = userValidator.validatepass("test@lfhwkf");
+		boolean result=false;
+		try {
+			result = userValidator.validatepass("test@lfhwkf");
+		} catch (UserRegistrationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	Assert.assertFalse(result);
     }
 	 
